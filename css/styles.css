@@ -93,6 +93,10 @@ img {
 .menu-list:not(:last-child) {
     margin-right: 50px;
 }
+
+.menu-list {
+    position: relative;
+}
     
 .menu-list-page,
 .contacts-link {
@@ -113,6 +117,19 @@ img {
 .address-footer .footer-link:focus {
     color: var(--accent-color);
 }
+
+.current::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: var(--accent-color);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    }
 
 .contacts {
     display: flex;
@@ -279,6 +296,10 @@ img {
     padding-left: 82px;
     margin-top: 0;
     margin-bottom: 0;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .doing-list {
@@ -289,6 +310,10 @@ img {
 
 .doing-list-item:not(:last-child) {
     margin-right: 30px;
+}
+
+.doing-list-item {
+    position: relative;
 }
 
 .team {
@@ -568,25 +593,6 @@ img {
     color: var(--main-color-theme-light);
 }
 
-.exampls-work-product,
-.exampls-work-description {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.87;
-    letter-spacing: 0.03em;
-    color: var(--secondary-color);
-
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-.exampls-work-description {
-    font-size: 18px;
-    line-height: 1,56;
-    color: var(--accent-color-blu-fone);
-    background-color: var(--accent-color);
-}
-
 .exampls-work-list {
     display: flex;
     flex-wrap: wrap;
@@ -605,6 +611,50 @@ img {
 .exampls-work-list-item:hover,
 .exampls-work-list-item:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.exampls-work-description,
+.exampls-work-product {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.87;
+    letter-spacing: 0.03em;
+    color: var(--secondary-color);
+
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.exampls-work-list-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.exampls-work-description {
+    font-size: 18px;
+    line-height: 1.56;
+    color: var(--accent-color-blu-fone);
+    background-color: rgba(33, 150, 243, 0.9);
+
+    margin-top: 0;
+    margin-bottom: 0;
+
+    padding-top: 63px;
+    padding-right: 24px;
+    padding-bottom: 63px;
+    padding-left: 24px;
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: all 0.5s linear;
+}
+
+.exampls-work-list-link:hover .exampls-work-description,
+.exampls-work-list-link:focus .exampls-work-description {
+    top: 0;
 }
 
 .exampls-work-box {
